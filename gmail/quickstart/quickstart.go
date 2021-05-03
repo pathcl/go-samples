@@ -104,19 +104,18 @@ func main() {
 		log.Fatalf("Unable to retrieve Gmail client: %v", err)
 	}
 
-	user := "me"
-	r, err := srv.Users.Labels.List(user).Do()
-	if err != nil {
-		log.Fatalf("Unable to retrieve labels: %v", err)
+	m, _ := srv.Users.Messages.List("me").Q("larger:10M").Do()
+
+	// We need to download html && open browser
+	for _, email := range m.Messages {
+
+		msg, err := srv.Users.Messages.Get("me", email.Id).Do()
+		if err != nil {
+			log.Fatalf("Unable to retrieve message %v: %v", email.Id, err)
+		}
+		fmt.Println(msg.Payload)
 	}
-	if len(r.Labels) == 0 {
-		fmt.Println("No labels found.")
-		return
-	}
-	fmt.Println("Labels:")
-	for _, l := range r.Labels {
-		fmt.Printf("- %s\n", l.Name)
-	}
+
 }
 
 // [END gmail_quickstart]
