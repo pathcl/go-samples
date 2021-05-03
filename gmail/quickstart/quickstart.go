@@ -18,13 +18,16 @@
 package main
 
 import (
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
+	"strings"
 
+	"github.com/pkg/errors"
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
@@ -86,6 +89,91 @@ func saveToken(path string, token *oauth2.Token) {
 	json.NewEncoder(f).Encode(token)
 }
 
+type Message struct {
+	From      string
+	To        string
+	Subject   string
+	BodyPlain string
+	BodyHtml  string
+}
+
+func findHeader(messagePart *gmail.MessagePart, name string) string {
+	for _, header := range messagePart.Headers {
+		if header.Name == name {
+			return header.Value
+		}
+	}
+	return ""
+}
+
+func findMessagePartByMimeType(messagePart *gmail.MessagePart, mimeType string) *gmail.MessagePart {
+	if messagePart.MimeType == mimeType {
+		return messagePart
+	}
+	if strings.HasPrefix(messagePart.MimeType, "multipart") {
+		for _, part := range messagePart.Parts {
+			if mp := findMessagePartByMimeType(part, mimeType); mp != nil {
+				return mp
+			}
+		}
+	}
+	return nil
+}
+
+func getMessagePartData(srv *gmail.Service, user, messageId string, messagePart *gmail.MessagePart) (string, error) {
+	var dataBase64 string
+
+	if messagePart.Body.AttachmentId != "" {
+		body, err := srv.Users.Messages.Attachments.Get(user, messageId, messagePart.Body.AttachmentId).Do()
+		if err != nil {
+			return "", errors.Wrap(err, "getMessagePartData get attachment")
+		}
+
+		dataBase64 = body.Data
+	} else {
+		dataBase64 = messagePart.Body.Data
+	}
+
+	data, err := base64.URLEncoding.DecodeString(dataBase64)
+	if err != nil {
+		return "", errors.Wrap(err, "getMessagePartData base64 decode")
+	}
+
+	return string(data), nil
+}
+
+func parseMessage(srv *gmail.Service, gmailMessage *gmail.Message, user string) (*Message, error) {
+	if gmailMessage.Payload == nil {
+		return nil, fmt.Errorf("No payload in gmail message.")
+	}
+
+	message := &Message{
+		From:    findHeader(gmailMessage.Payload, "From"),
+		To:      findHeader(gmailMessage.Payload, "To"),
+		Subject: findHeader(gmailMessage.Payload, "Subject"),
+	}
+
+	//	plainMessagePart := findMessagePartByMimeType(gmailMessage.Payload, "text/plain")
+	//	if plainMessagePart != nil {
+	//		plainMessage, err := getMessagePartData(srv, user, gmailMessage.Id, plainMessagePart)
+	//		if err != nil {
+	//			return nil, errors.Wrap(err, "parseMessage plain")
+	//		}
+	//		message.BodyPlain = plainMessage
+	//	}
+
+	htmlMessagePart := findMessagePartByMimeType(gmailMessage.Payload, "text/html")
+	if htmlMessagePart != nil {
+		htmlMessage, err := getMessagePartData(srv, user, gmailMessage.Id, htmlMessagePart)
+		if err != nil {
+			return nil, errors.Wrap(err, "parseMessage html")
+		}
+		message.BodyHtml = htmlMessage
+	}
+
+	return message, nil
+}
+
 func main() {
 	b, err := ioutil.ReadFile("credentials.json")
 	if err != nil {
@@ -104,16 +192,17 @@ func main() {
 		log.Fatalf("Unable to retrieve Gmail client: %v", err)
 	}
 
-	m, _ := srv.Users.Messages.List("me").Q("larger:10M").Do()
+	m, _ := srv.Users.Messages.List("me").Q("label:newsletter after:2021/05/01 from: hi@vimtricks.com").Do()
 
-	// We need to download html && open browser
 	for _, email := range m.Messages {
 
-		msg, err := srv.Users.Messages.Get("me", email.Id).Do()
+		msg, err := srv.Users.Messages.Get("me", email.Id).Format("full").Do()
 		if err != nil {
 			log.Fatalf("Unable to retrieve message %v: %v", email.Id, err)
 		}
-		fmt.Println(msg.Payload)
+
+		body, _ := parseMessage(srv, msg, "me")
+		fmt.Println(body)
 	}
 
 }

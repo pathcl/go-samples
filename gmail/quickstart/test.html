@@ -1,0 +1,773 @@
+&{VimTricks <hi@vimtricks.com> luis@sanmartin.io Automated file templates  <!DOCTYPE html>
+<html xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<title>Automated file templates</title>
+<style id="aw-autoinject" type="text/css">
+    body,a {
+        word-break: break-word;
+    }
+    .text-element div,
+    .text-element p,
+    .text-element h1,
+    .text-element h2,
+    .text-element h3,
+    .text-element h4,
+    .text-element h5,
+    .text-element h6,
+    .text-element ul,
+    .text-element ol,
+    .text-element li,
+    .text-element address {
+        font-family: Helvetica, Arial, sans-serif;
+        margin: 0px!important;
+        padding: 0px!important;
+    }
+    .text-element h1 {
+        color: inherit;
+        font-size: 36px;
+        line-height: 1.15em;
+        margin: 5px 0px;
+    }
+    .text-element h2 {
+        color: inherit;
+        font-size: 32px;
+        line-height: 1.15em;
+        margin: 5px 0px;
+    }
+    .text-element h3 {
+        color: inherit;
+        font-size: 28px;
+        line-height: 1.15em;
+        margin: 5px 0px;
+    }
+    .text-element h4 {
+        color: inherit;
+        font-size: 24px;
+        line-height: 1.15em;
+        margin: 5px 0px;
+    }
+    .text-element h5 {
+        color: inherit;
+        font-size: 20px;
+        line-height: 1.15em;
+        margin: 5px 0px;
+    }
+    .text-element h6 {
+        color: inherit;
+        font-size: 16px;
+        line-height: 1.15em;
+        margin: 5px 0px;
+    }
+    .text-element p {
+        color: inherit;
+        font-size: 16px;
+        line-height: 1.5em;
+        margin: 5px 0px;
+    }
+    .text-element pre {
+        color: inherit;
+        display: block;
+        font-family: monospace;
+        font-size: 16px;
+        line-height: 1em;
+        margin: 1em 0;
+        white-space: pre;
+    }
+    .text-element address {
+        color: inherit;
+        display: block;
+        font-size: 16px;
+        font-style: italic;
+        line-height: 1.15em;
+    }
+    @media only screen and (max-width:599px) {
+        img {
+            max-width: 100% !important;
+            min-height: 1px !important;
+            height: auto !important;
+        }
+        .aw-stack .container {
+            box-sizing: border-box;
+            display: block !important;
+            float: left;
+            max-width: 100% !important;
+            margin: auto;
+            width: 100% !important;
+        }
+        .video .video-content {
+            width: auto !important;
+        }
+
+        .feed__item--postcard-side,
+        .feed__item--postcard-main,
+        .feed__item--block {
+            box-sizing: border-box;
+            display: block !important;
+            float: left;
+            max-width: 100% !important;
+            margin: auto;
+            width: 100% !important;
+        }
+        .feed__item--block > div {
+            margin: 0 0 16px 0 !important;
+        }
+        .feed__image {
+            width: 100% !important;
+        }
+        .feed__spacer {
+            display: none !important;
+        }
+    }
+</style>
+<style type="text/css">
+v:* { behavior: url(#default#VML); display: inline-block; }
+<style type="text/css">
+/* Full-Width Wrapper and General Body Styles */
+body,#bodyTable,#bodyCell {
+ height:100%;
+ margin:0px;
+ padding:0px;
+ width:100%;
+}
+body,table,td,a {
+ -webkit-text-size-adjust:100%;
+ -ms-text-size-adjust:100%;
+}
+table,td {
+ font-family:Helvetica,Arial,serif;
+}
+img {
+ -ms-interpolation-mode:bicubic;
+ border:0;
+ height:auto;
+ line-height:100%;
+ max-width:100%;
+ outline:none;
+ text-decoration:none;
+}
+.temp-fullbleed img {
+ height:auto;
+ max-width:100%;
+ padding:0;
+ width:100%;
+}
+.image td {
+ padding-bottom:0 !important;
+}
+.floated-left {
+ mso-table-rspace:6pt;
+}
+.floated-right {
+ mso-table-lspace:6pt;
+}
+table {
+ border-collapse:collapse !important;
+}
+.temp-wrapper {
+ margin-bottom:30px;
+ font-family:Helvetica,Arial,sans-serif;
+ padding:0;
+ text-align:left;
+ -webkit-font-smoothing:antialiased;
+}
+.headline a {
+ color:#474444;
+ text-decoration:none;
+}
+.paragraph a {
+ color:#408FE7;
+ font-weight: bold;
+}
+</style>
+
+<style type="text/css">
+/* Full-Width Header */
+.temp-header {
+ max-width:560px;
+}
+.temp-header .headline {
+ color:#474444;
+ font-size:20px;
+ font-weight:bold;
+ line-height:1.2em;
+ text-align:left;
+}
+.temp-header .paragraph {
+ color:#242020;
+ font-size:18px;
+ font-weight:normal;
+ line-height:1.5em;
+ text-align:left;
+}
+.temp-header img {
+ height:auto;
+ max-width: 560px;
+}
+</style>
+
+<style type="text/css">
+/* Body Section */
+.temp-fullbleed {
+ margin:0;
+ padding:0;
+}
+.temp-fullbleed .container td {
+ padding:0;
+}
+.temp-body {
+ max-width:560px;
+ padding:0;
+}
+.temp-body .headline {
+ color:#474444;
+ font-size:24px;
+ font-weight:bold;
+ line-height:1.5em;
+ text-align:center;
+}
+.temp-body .paragraph {
+ color:#242020;
+ font-size:18px;
+ font-weight:normal;
+ line-height:1.5em;
+ text-align: left;
+}
+</style>
+
+<style type="text/css">
+/* Full-Width Footer */
+.temp-footer {
+ max-width:560px;
+}
+.temp-footer .headline {
+ color:#474444;
+ font-size:14px;
+ font-weight:bold;
+ line-height:1.6em;
+ text-align:center;
+}
+.temp-footer .paragraph {
+ color:#242020;
+ font-size:14px;
+ font-weight:normal;
+ line-height:1.6em;
+ text-align:center;
+}
+.temp-footer img {
+ height:auto;
+ max-width: 560px;
+}
+</style>
+
+<style type="text/css">
+/* Custom Elements */
+.temp-article .headline {
+ font-size:20px !important;
+ text-align:left !important;
+}
+.temp-article .headline a {
+ color:#474444;
+ text-decoration:none;
+}
+.temp-article td {
+ padding:0;
+}
+.temp-article .padding {
+ padding-bottom:20px;
+}
+.temp-article .read-more {
+ text-align:left;
+}
+.temp-signature {
+ max-width:100%;
+}
+.temp-signature .temp-padding {
+ padding:0 0 30px 0 !important;
+}
+.temp-signature .image {
+ height:auto;
+ padding:0 15px 0 0;
+ display:inline-block;
+}
+.temp-signature img {
+ height:auto;
+}
+.temp-signature .paragraph {
+ padding:0 15px 0 15px;
+ margin:0;
+ display:inline-block;
+}
+.temp-button-styles {
+ border-radius:100px;
+ font-weight:bold;
+ padding:10px 15px 10px 15px;
+}
+.temp-product .temp-padding {
+ padding:10px;
+}
+.temp-product .image {
+ max-width:100%;
+ height:auto;
+ padding-bottom:15px;
+}
+.temp-product img a {
+ text-decoration:none !important;
+}
+.temp-product .headline {
+ font-size:14px;
+ line-height:1.6em;
+ max-width:100%;
+ text-align:center;
+}
+.temp-product .headline a {
+ color:#474444;
+ font-size:14px;
+ line-height:1.6em;
+ max-width:100%;
+ text-align:center;
+ text-decoration:none !important;
+}
+.temp-product .paragraph {
+ font-size:14px;
+ line-height:1.5em;
+ max-width:100%;
+ text-align:center;
+}
+.temp-product .temp-button-styles {
+ border-radius:100px;
+ background-color:#6B7E87;
+ color:#F8F8F8;
+ font-size:14px;
+ font-weight:bold;
+ text-align:center;
+}
+.temp-product .temp-button .temp-padding {
+ padding:10px;
+}
+.temp-product .temp-button a {
+ color:#F8F8F8;
+ text-decoration:none !important;
+}
+.coupon .headline {
+ font-size:20px;
+ text-align:center;
+}
+.coupon .paragraph {
+ text-align:center;
+}
+</style>
+
+<style type="text/css">
+/* Media Query for Smaller Screens */
+@media only screen and (max-width:599px) {
+ body,#bodyTable,#bodyCell {
+   height:100%;
+   margin:0px;
+   padding:0px;
+   width:100%;
+ }
+ img {
+   max-width:100% !important;
+   height:auto !important;
+ }
+ .share img {
+   width:20px!important;
+   height:auto!important;
+   display:inline-block;
+ }
+ .temp-wrapper {
+   padding-left:6px !important;
+   padding-right:6px !important;
+ }
+ .temp-body {
+   margin:0 10px !important;
+   max-width:100% !important;
+ }
+ .headline {
+   font-size:16px !important;
+   padding-left:5px !important;
+   padding-right:5px !important;
+ }
+ .paragraph {
+   font-size:16px !important;
+   padding-left:5px !important;
+   padding-right:5px !important;
+ }
+ .temp-header .paragraph div {
+   text-align:center !important;
+ }
+ .temp-article div {
+   box-sizing:border-box !important;
+   display:block !important;
+   width:100% !important;
+ }
+ .temp-signature .image {
+   display:block !important;
+   width:100% !important;
+   padding:0px 0px 15px 0px !important;
+ }
+ .temp-signature .paragraph {
+   display:block !important;
+   width:100% !important;
+   text-align:center !important;
+ }
+ .temp-footer .headline {
+   font-size:12px !important;
+ }
+ .temp-footer .paragraph {
+   font-size:12px !important;
+ }
+ .temp-footer .share img {
+   height:20px !important;
+   width: 20px !important;
+ }
+ .video td {
+   text-align:center !important;
+ }
+ .floated-left {
+   display:inline-table !important;
+   width:100% !important;
+   text-align:center !important;
+ }
+ .floated-left td {
+   padding:10px 0px !important;
+ }
+ .floated-right {
+   display:inline-table !important;
+   width:100% !important;
+   text-align:center !important;
+ }
+ .floated-right td {
+   padding:10px 0px !important;
+ }
+}
+</style>
+<style type="text/css">
+@media only screen and (min-width:10px) and (max-width:599px) {
+ u ~ div img {
+  width: auto!important;
+ }
+}
+</style>
+
+</style>
+<!--[if !mso]><!--><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" id="aw-webfonts" rel="stylesheet" type="text/css"><!--<![endif]-->
+<!--[if mso]><style id="aw-webfonts-fallback" type="text/css">[style*="font-family:Open Sans"]{font-family:Helvetica, Arial, sans-serif;}</style><![endif]-->
+</head>
+<body>
+<span class="aw-preheadertext" style="color: rgb(255, 255, 255); display: none; font-size: 0px; line-height: 0; margin: 0px; padding: 0px; visibility: hidden;">Use Vim’s built-in mappings to navigate around the screen.</span><div class="aw-preheaderspacer" style="display: none; max-height: 0px; overflow:
+hidden;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<center>
+<div align="center"><table border="0" cellspacing="0" cellpadding="0" width="100%" class="aw-bgc" align="center" role="presentation" style="background-color: rgb(240, 240, 240); text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;">
+ <tbody><tr>
+	<td class="temp-wrapper" style="text-size-adjust: 100%; font-family: Helvetica, Arial, sans-serif; margin-bottom: 30px; padding: 0px; text-align: left; -webkit-font-smoothing: antialiased;">
+			<div align="center">
+			<!--[if (gte mso 9)]><table border="0" cellspacing="0" cellpadding="0" width="560" align="center" role="presentation"><tr><td class="temp-header"><![endif]-->
+			<div class="temp-header" style="max-width: 560px;">
+				<div class="region"><div><table class="row aw-stack" style="width: 100%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;" role="presentation"><tbody><tr><td class="container" style="padding: 10px 0px; width: 100%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;" width="100%" valign="middle"><div class="definition-parent"><div class="headline" style="color: rgb(71, 68, 68); font-size: 20px; font-weight: bold; line-height: 1.2em;
+text-align: left;"><div><div style="line-height:1.5; text-align:center"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif"><span style="font-size:22px">Vim Tips &amp; Tricks<span style="color:#698596">&nbsp;by VimTricks</span></span></span></div>
+</div></div></div></td></tr></tbody></table></div>
+</div>
+			</div>
+			<!--[if (gte mso 9)]></td></tr></table><table border="0" bgcolor="#ffffff" cellspacing="0" cellpadding="0" width="560" align="center" role="presentation"><tr><td class="temp-body"><![endif]-->
+			<div class="temp-body" style="background-color: rgb(255, 255, 255); max-width: 560px; padding: 0px;">
+				<div class="temp-fullbleed">
+					<div class="region"><div><table class="row aw-stack" style="width: 100%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;" role="presentation"><tbody><tr><td class="container" style="padding: 0px; width: 100%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;" width="100%" valign="top"><div class="definition-parent"><span><table align="center" width="100%" class="floated-none" style="float: none; text-align: center; text-size-adjust: 100%;
+font-family: Helvetica, Arial, serif; border-collapse: collapse;" role="presentation">
+  <tbody><tr>
+    <td align="center" style="padding: 0px; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+      
+      <img class="model" src="https://hostedimages-cdn.aweber-static.com/MTY0MDAwNw==/original/e74d669d64134bb3ad23daa8dca0cc1a.png" style="display: block; width: 560px; height: 213px; border-width: 0px; border-style: none; line-height: 100%; max-width: 100%; outline-width: medium; outline-style: none; text-decoration: none; padding: 0px;" alt="" width="560" height="213">
+      
+    </td>
+  </tr>
+</tbody></table></span></div></td></tr></tbody></table></div>
+</div>
+				</div>
+				<!--[if (gte mso 9)]><table border="0" bgcolor="#ffffff" cellspacing="0" cellpadding="0" width="560" align="center" role="presentation"><tr><td class="temp-padding"><![endif]-->
+				<div class="temp-padding">
+					<div class="region"><div><table class="row aw-stack" style="width: 100%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;" role="presentation"><tbody><tr><td class="container" style="padding: 20px 30px 0px; width: 100%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;" width="100%" valign="top"><div class="definition-parent"><div class="headline" style="color: rgb(71, 68, 68); font-size: 24px; font-weight: bold; line-height: 1.5em;
+text-align: center;"><div><div style="text-align:left"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif">Automated file template</span></div>
+</div></div></div><div class="definition-parent"><div class="paragraph" style="color: rgb(36, 32, 32); font-size: 18px; font-weight: normal; line-height: 1.5em; text-align: left;"><div><div style="line-height:115%"><!-- wp:paragraph -->
+<p><!-- wp:paragraph --></p>
+
+<p><!-- wp:paragraph --></p>
+
+<div>
+<div>
+<p><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif">VimTricks reader Kyle recently&nbsp;<a class="validating" href="mailto:hi@vimtricks.com" style="text-size-adjust: 100%; color: rgb(64, 143, 231); font-weight: bold;">wrote in</a>&nbsp;to ask about file templates. There are plenty of&nbsp;<a class="validating" data-wpel-link="external" href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=4gXIJy.bZse_hC58503H4A" rel="external noopener noreferrer" style="text-size-adjust: 100%; color:
+rgb(64, 143, 231); font-weight: bold;">snippet</a>&nbsp;and templating plugins out there. But did you know Vim has a built-in concept called skeleton files which allow you to automatically populate a new file with a given template? Learn about it with&nbsp;<strong><code>:help skeleton</code></strong>&nbsp;but let’s dive into it.</span></span></p>
+
+<p><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif">The general idea of skeleton files is that you configure your Vim to read a template from disk every time you open a new, empty buffer with a filename that matches a given pattern. One example might be when writing shell scripts. You can create a skeleton file that contains the Bash shebang line like so:</span></span></p>
+
+<pre><strong><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif"><code>#!/usr/bin/env bash</code></span></span></strong></pre>
+
+<p><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif">Then configure your Vim to populate any new and empty buffer that ends in&nbsp;<strong><code>.sh</code></strong>&nbsp;with this file contents. If you’re working in a language that requires a lot of boilerplate in every file, this can be an enormous time saver.</span></span></p>
+
+<p><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif">Another example use case is a README file. You could create a&nbsp;<a class="validating" data-wpel-link="external" href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=3_4tFs4b1ZnNkKoxUnzCwA" rel="external noopener noreferrer" style="text-size-adjust: 100%; color: rgb(64, 143, 231); font-weight: bold;">template Markdown file</a>&nbsp;that includes all the headings and basic bullet points that every good README should
+have. Then whenever you open a new file called&nbsp;<strong><code>README.md</code></strong>&nbsp;in Vim, the buffer will automatically pre-populate with the skeleton template file.</span></span></p>
+
+<p><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif">Configuring these templates in your&nbsp;<strong><code>.vimrc</code></strong>&nbsp;is simple:</span></span></p>
+
+<pre><strong><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif"><code>autocmd BufNewFile readme.md 0r ~/skeletons/readme.md
+autocmd BufNewFile *.sh 0r ~/skeletons/bash.sh</code></span></span></strong></pre>
+
+<p><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif">In this case, I’ve created a new directory inside my home directory called&nbsp;<strong><code>skeletons</code></strong>&nbsp;but you could put these anywhere. Here’s how this works:</span></span></p>
+
+<ul>
+	<li><span style="color:#000000"><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif"><strong><code>autocmd</code></strong>&nbsp;– run this automatically on some event</span></span></span></li>
+	<li><span style="color:#000000"><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif"><strong><code>BufNewFile</code></strong>&nbsp;– this is Vim’s new file event</span></span></span></li>
+	<li><span style="color:#000000"><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif"><strong><code>readme.md</code></strong>&nbsp;– this is the pattern you want the new file to match</span></span></span></li>
+	<li><span style="color:#000000"><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif"><strong><code>0r</code></strong>&nbsp;– read into the buffer starting at line 0, the first line</span></span></span></li>
+	<li><span style="color:#000000"><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif"><strong><code>~/skeletons/readme.md</code></strong>&nbsp;– the file to read in</span></span></span></li>
+</ul>
+
+<p><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif">There’s a quick demo of this in action below. Let us know what you think in the comments. Do you have any use cases where this is handy? And please&nbsp;<a class="validating" href="mailto:hi@vimtricks.com" style="text-size-adjust: 100%; color: rgb(64, 143, 231); font-weight: bold;">reach out</a>&nbsp;with other content you’d like to see covered in future issues of VimTricks.</span></span></p>
+</div>
+</div>
+
+<p><!-- /wp:paragraph --></p>
+
+<p><!-- /wp:paragraph --></p>
+<!-- /wp:paragraph --><!-- wp:paragraph --><!-- /wp:paragraph --></div>
+</div></div></div><div class="definition-parent"><span><table align="center" width="100%" class="floated-none" style="float: none; text-align: center; text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;" role="presentation">
+  <tbody><tr>
+    <td align="center" style="padding: 0px; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+      <a class="aw-image-link" href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=Z_xeZr6j0UpJhs9YQc9LUg" style="text-size-adjust: 100%;">
+      <img class="model" src="https://hostedimages-cdn.aweber-static.com/MTY0MDAwNw==/original/995738c0a98641a6acd03f119bf1940a.gif" style="display: block; width: 500px; height: 365px; border-width: 0px; border-style: none; line-height: 100%; max-width: 100%; outline-width: medium; outline-style: none; text-decoration: none;" alt="Image" width="500" height="365">
+      </a>
+    </td>
+  </tr>
+</tbody></table></span></div><div class="definition-parent"><!--Button-->
+	<table align="center" class="temp-button-padding" cellspacing="0" cellpadding="0" width="100%" style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;">
+	  <tbody><tr>
+	    <td align="center" style="padding: 10px 0px; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+
+	      <table border="0" cellspacing="0" cellpadding="0" style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;">
+	        <tbody><tr>
+              <td align="center" bgcolor="#38C54D" style="border-radius: 100px; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+                  <a href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=Z_xeZr6j0UpJhs9YQc9LUg" target="_blank" style="font-size: 15px; font-family: Helvetica, Arial, sans-serif; color: rgb(255, 255, 255); text-decoration: none; border-radius: 100px; display: inline-block; text-size-adjust: 100%;">
+                    <div class="temp-button-styles" style="background-color: rgb(56, 197, 77); border-radius: 100px; font-weight: bold; padding: 10px 15px;">
+                    <!--[if mso]>&nbsp;<![endif]-->
+                        <span style="font-size: 15px; font-family: Helvetica, Arial, sans-serif; color: #FFFFFF;">Read the Tip</span>
+                    <!--[if mso]>&nbsp;<![endif]-->
+                    </div>
+                  </a>
+              </td>
+	        </tr>
+	      </tbody></table>
+
+	    </td>
+	  </tr>
+	</tbody></table></div><div class="definition-parent">
+  <div class="divider">
+    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;">
+      <tbody>
+          <tr>
+            <td class="divider-container" style="padding: 10px 0px; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+              <table width="100%" role="presentation" style="border-top: 1px solid rgb(222, 224, 232); border-collapse: collapse; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+                <tbody>
+                  <tr>
+                    <td width="100%" style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif;"><!--<hr style="border-top-style:none; border-left-style:none; border-right-style:none;"/>--></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div><div class="definition-parent"><div class="headline" style="color: rgb(71, 68, 68); font-size: 24px; font-weight: bold; line-height: 1.5em; text-align: center;"><div><div style="text-align:left"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif">Classifieds</span></div>
+</div></div></div><div class="definition-parent"><div class="paragraph" style="color: rgb(36, 32, 32); font-size: 18px; font-weight: normal; line-height: 1.5em; text-align: left;"><div><div style="line-height:115%"><!-- wp:paragraph -->
+<p><!-- wp:paragraph --></p>
+
+<p><!-- wp:paragraph --></p>
+
+<div>
+<p><span style="font-family:&quot;Open Sans&quot;,Helvetica,Arial,sans-serif; font-size:18px"><strong>Git Better with Vim</strong></span><br>
+<span style="font-family:Open Sans,Helvetica,Arial,sans-serif"><span style="font-size:14px">Our&nbsp;email course, <a class="validating" href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=.6K216rlx65F8udEqo2C9Q" style="text-size-adjust: 100%; color: rgb(64, 143, 231); font-weight: bold;">Git Better with Vim</a>, contains 24 emails just like this one. But each email features a specific workflow or tip about how to use Git without leaving Vim. Power up your efficiency
+with two dozen tips, tricks, plugin recommendations, and more -- each one designed to help you context switch less by staying in Vim. Use code <strong>classifieds</strong> for 25% off.</span></span></p>
+</div>
+
+<p><!-- /wp:paragraph --></p>
+
+<p><!-- /wp:paragraph --></p>
+<!-- /wp:paragraph --><!-- wp:paragraph --><!-- /wp:paragraph --></div>
+</div></div></div><div class="definition-parent"><!--Button-->
+	<table align="center" class="temp-button-padding" cellspacing="0" cellpadding="0" width="100%" style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;">
+	  <tbody><tr>
+	    <td align="center" style="padding: 10px 0px; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+
+	      <table border="0" cellspacing="0" cellpadding="0" style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;">
+	        <tbody><tr>
+              <td align="center" bgcolor="#38C54D" style="border-radius: 100px; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+                  <a href="gumroad.com/l/hsOVI?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=vimtricks" target="_blank" style="font-size: 15px; font-family: Helvetica, Arial, sans-serif; color: rgb(255, 255, 255); text-decoration: none; border-radius: 100px; display: inline-block; text-size-adjust: 100%;">
+                    <div class="temp-button-styles" style="background-color: rgb(56, 197, 77); border-radius: 100px; font-weight: bold; padding: 10px 15px;">
+                    <!--[if mso]>&nbsp;<![endif]-->
+                        <span style="font-size: 15px; font-family: Helvetica, Arial, sans-serif; color: #FFFFFF;">Git Better</span>
+                    <!--[if mso]>&nbsp;<![endif]-->
+                    </div>
+                  </a>
+              </td>
+	        </tr>
+	      </tbody></table>
+
+	    </td>
+	  </tr>
+	</tbody></table></div><div class="definition-parent"><div class="paragraph" style="color: rgb(36, 32, 32); font-size: 18px; font-weight: normal; line-height: 1.5em; text-align: left;"><div><div style="line-height:115%"><!-- wp:paragraph -->
+<p><!-- wp:paragraph --></p>
+
+<p><!-- wp:paragraph --></p>
+
+<div>
+<p><span style="font-family:Open Sans,Helvetica,Arial,sans-serif"><span style="font-size:18px"><strong>Chat with us on Discord</strong></span></span></p>
+
+<p><span style="font-family:Open Sans,Helvetica,Arial,sans-serif"><span style="font-size:14px">Join us in supporting the&nbsp;development of Vim plugins and come discuss Vim tips and tricks. Chat with us on Discord by <a class="validating" href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=e3jpYov38THKJnTvNIMAyA" style="text-size-adjust: 100%; color: rgb(64, 143, 231); font-weight: bold;">sponsoring Tim Pope</a>, author of all your favorite plugins, on <a class="validating" href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=e3jpYov38THKJnTvNIMAyA"
+style="text-size-adjust: 100%; color: rgb(64, 143, 231); font-weight: bold;">Github Sponsors</a>&nbsp;for $10/month and get access to the <strong>tpope private Discord</strong> where we hang out and chat about Vim. </span></span></p>
+</div>
+
+<p><!-- /wp:paragraph --></p>
+
+<p><!-- /wp:paragraph --></p>
+<!-- /wp:paragraph --><!-- wp:paragraph --><!-- /wp:paragraph --></div>
+</div></div></div><div class="definition-parent"><!--Button-->
+	<table align="center" class="temp-button-padding" cellspacing="0" cellpadding="0" width="100%" style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;">
+	  <tbody><tr>
+	    <td align="center" style="padding: 10px 0px; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+
+	      <table border="0" cellspacing="0" cellpadding="0" style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;">
+	        <tbody><tr>
+              <td align="center" bgcolor="#38C54D" style="border-radius: 100px; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+                  <a href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=e3jpYov38THKJnTvNIMAyA" target="_blank" style="font-size: 15px; font-family: Helvetica, Arial, sans-serif; color: rgb(255, 255, 255); text-decoration: none; border-radius: 100px; display: inline-block; text-size-adjust: 100%;">
+                    <div class="temp-button-styles" style="background-color: rgb(56, 197, 77); border-radius: 100px; font-weight: bold; padding: 10px 15px;">
+                    <!--[if mso]>&nbsp;<![endif]-->
+                        <span style="font-size: 15px; font-family: Helvetica, Arial, sans-serif; color: #FFFFFF;">Sponsor tpope</span>
+                    <!--[if mso]>&nbsp;<![endif]-->
+                    </div>
+                  </a>
+              </td>
+	        </tr>
+	      </tbody></table>
+
+	    </td>
+	  </tr>
+	</tbody></table></div><div class="definition-parent">
+  <div class="divider">
+    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;">
+      <tbody>
+          <tr>
+            <td class="divider-container" style="padding: 25px 0px 15px; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+              <table width="100%" role="presentation" style="border-top: 2px solid rgb(195, 206, 213); border-collapse: collapse; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+                <tbody>
+                  <tr>
+                    <td width="100%" style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif;"><!--<hr style="border-top-style:none; border-left-style:none; border-right-style:none;"/>--></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div><div class="definition-parent"><div class="headline" style="color: rgb(71, 68, 68); font-size: 24px; font-weight: bold; line-height: 1.5em; text-align: center;"><div><div style="text-align: left;"><span style="font-family: &quot;Open Sans&quot;, Helvetica, Arial, sans-serif;">Did you like this tip?</span></div>
+</div></div></div><div class="definition-parent"><div class="paragraph" style="color: rgb(36, 32, 32); font-size: 18px; font-weight: normal; line-height: 1.5em; text-align: left;"><div><div style="line-height:115%"><!-- wp:paragraph -->
+<p><span style="font-family:&quot;Open Sans&quot;,Helvetica,Arial,sans-serif"><span style="font-size:14px">Clink a link below to give this tip a star rating:</span></span></p>
+<!-- /wp:paragraph --><!-- wp:list -->
+
+<ul>
+	<li><a class="validating" href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=mlcGLXg_vqI8tH5cm4R5oQ" style="text-size-adjust: 100%; color: rgb(64, 143, 231); font-weight: bold;">⭐️⭐️⭐️⭐️⭐️&nbsp;<span style="color:#000000; font-family:Open Sans,Helvetica,Arial,sans-serif"><span style="font-size:14px">5 Stars</span></span></a></li>
+	<li><a class="validating" href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=5Gfxsg57OKwvwLUgXrN1XQ" style="text-size-adjust: 100%; color: rgb(64, 143, 231); font-weight: bold;">⭐️⭐️⭐️⭐️ <span style="color:#000000; font-family:Open Sans,Helvetica,Arial,sans-serif"><span style="font-size:14px">4 Stars</span></span></a></li>
+	<li><a class="validating" href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=aau7aTYVMaKEOaD0J2luhA" style="text-size-adjust: 100%; color: rgb(64, 143, 231); font-weight: bold;">⭐️⭐️⭐️&nbsp;<span style="font-family:Open Sans,Helvetica,Arial,sans-serif"><span style="color:#000000"><span style="font-size:14px">3 Stars</span></span></span></a></li>
+	<li><a class="validating" href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=qQ3rssPgMIGIh1DtjSyZLA" style="text-size-adjust: 100%; color: rgb(64, 143, 231); font-weight: bold;">⭐️⭐️ <span style="color:#000000; font-family:&quot;Open Sans&quot;,Helvetica,Arial,sans-serif"><span style="font-size:14px">2 Stars</span></span></a></li>
+	<li><a class="validating" href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=xeAZVe0yMKkxURAH2rnMSQ" style="text-size-adjust: 100%; color: rgb(64, 143, 231); font-weight: bold;">⭐️ <span style="color:#000000; font-family:&quot;Open Sans&quot;,Helvetica,Arial,sans-serif"><span style="font-size:14px">1 Star</span></span></a></li>
+</ul>
+<!-- /wp:list --><!-- wp:paragraph -->
+
+<p><span style="font-size:14px"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif">Thanks for&nbsp;your feedback&nbsp;-- it's really valuable and helps us improve the tips!</span></span></p>
+<!-- /wp:paragraph --></div>
+</div></div></div><div class="definition-parent">
+  <div class="divider">
+    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;">
+      <tbody>
+          <tr>
+            <td class="divider-container" style="padding: 25px 0px 15px; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+              <table width="100%" role="presentation" style="border-top: 2px solid rgb(195, 206, 213); border-collapse: collapse; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+                <tbody>
+                  <tr>
+                    <td width="100%" style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif;"><!--<hr style="border-top-style:none; border-left-style:none; border-right-style:none;"/>--></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div></td></tr></tbody></table><table class="row aw-stack" style="width: 100%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;" role="presentation"><tbody><tr><td class="container" style="padding: 0px 20px 30px 30px; width: 55.9%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;" width="55.9%" valign="top"><div class="definition-parent"><div class="temp-article">
+    <table cellpadding="0" cellspacing="0" class="temp-article" width="100%" style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;">
+        <tbody><tr>
+            <td class="padding" style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif; padding: 0px 0px 20px;">
+               <div class="headline" style="font-size: 20px; text-align: left; color: rgb(71, 68, 68); font-weight: bold; line-height: 1.5em;">
+                    <div><div><span style="font-family:Open Sans,Helvetica,Arial,sans-serif;">Questions or Comments?</span></div>
+</div>
+               </div> 
+            </td>   
+        </tr>
+        <tr>
+            <td style="text-size-adjust: 100%; font-family: Helvetica, Arial, serif; padding: 0px;">
+                <div class="paragraph" style="color: rgb(36, 32, 32); font-size: 18px; font-weight: normal; line-height: 1.5em; text-align: left;">
+                    <div><div style="line-height: 115%;"><span style="font-size:14px;"><span style="font-family:Open Sans,Helvetica,Arial,sans-serif;">We thrive on your feedback. Please reply to this email with your questions, comments, complaints, corrections, or suggestions. Or if you just&nbsp;learned something today, we'd love to know! ~ Colin &amp; Andy</span></span></div>
+</div>
+                </div>
+            </td>
+        </tr>
+        
+    </tbody></table>
+</div></div></td><td class="container" style="padding: 20px 30px 30px 5px; width: 35.2%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;" width="35.2%" valign="middle" bgcolor="#FFFFFF"><div class="definition-parent"><span><table align="center" width="100%" class="floated-none" style="float: none; text-align: center; text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;" role="presentation">
+  <tbody><tr>
+    <td align="center" style="padding: 0px; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+      <a class="aw-image-link" href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=ZmFqD5Bj25M2FaonD7aytw" style="text-size-adjust: 100%;">
+      <img class="model" src="https://hostedimages-cdn.aweber-static.com/MTY0MDAwNw==/optimized/aad4c3f3776543bb888c21d5b704b07b.png" style="display: block; width: 181px; height: 112px; border-width: 0px; border-style: none; line-height: 100%; max-width: 100%; outline-width: medium; outline-style: none; text-decoration: none;" alt="Image" width="181" height="112">
+      </a>
+    </td>
+  </tr>
+</tbody></table></span></div></td></tr></tbody></table></div>
+</div>
+				</div>
+				<!--[if (gte mso 9)]></td></tr></table><![endif]-->
+			</div>
+			<!--[if (gte mso 9)]></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="560" align="center" role="presentation"><tr><td class="temp-footer"><![endif]-->
+			<div class="temp-footer" style="max-width: 560px;">
+				<div class="region"><div><table class="row aw-stack" style="width: 100%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;" role="presentation"><tbody><tr><td class="container" style="padding: 30px 0px 0px; width: 100%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;" width="100%" valign="top"></td></tr></tbody></table><table class="row" style="width: 100%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse:
+collapse;" role="presentation"><tbody><tr><td class="container" style="padding: 0px; width: 16.7%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;" width="16.7%" valign="top"></td><td class="container" style="padding: 0px; width: 16.7%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;" width="16.7%" valign="top"></td><td class="container" style="padding: 0px; width: 16.7%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;" width="16.7%" valign="top"><div
+class="definition-parent"><span><table align="center" width="100%" class="floated-none" style="float: none; text-align: center; text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;" role="presentation">
+  <tbody><tr>
+    <td align="center" style="padding: 0px; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+      <a class="aw-image-link" href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=3kcSl9SQmzXpDeX.hPuuCQ" style="text-size-adjust: 100%;">
+      <img class="model" src="https://www.aweber.com/images/email-templates/structures/social-twitter.png" style="display: block; width: 30px; height: 30px; border-width: 0px; border-style: none; line-height: 100%; max-width: 560px; outline-width: medium; outline-style: none; text-decoration: none;" alt="" width="30" height="30">
+      </a>
+    </td>
+  </tr>
+</tbody></table></span></div></td><td class="container" style="padding: 0px; width: 16.7%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;" width="16.7%" valign="top"><div class="definition-parent"><span><table align="center" width="100%" class="floated-none" style="float: none; text-align: center; text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;" role="presentation">
+  <tbody><tr>
+    <td align="center" style="padding: 0px; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;">
+      <a class="aw-image-link" href="https://clicks.aweber.com/y/ct/?l=CRfsK&amp;m=gpvyo2ihc33m8rs&amp;b=Uuv9nEAMwxS9IuARKoJt2w" style="text-size-adjust: 100%;">
+      <img class="model" src="https://www.aweber.com/images/email-templates/structures/social-youtube.png" style="display: block; width: 30px; height: 30px; border-width: 0px; border-style: none; line-height: 100%; max-width: 560px; outline-width: medium; outline-style: none; text-decoration: none;" alt="" width="30" height="30">
+      </a>
+    </td>
+  </tr>
+</tbody></table></span></div></td><td class="container" style="padding: 0px; width: 16.7%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;" width="16.7%" valign="top"></td><td class="container" style="padding: 0px; width: 16.7%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;" width="16.7%" valign="top"></td></tr></tbody></table><table class="row aw-stack" style="width: 100%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif; border-collapse: collapse;"
+role="presentation"><tbody><tr><td class="container" style="padding: 30px 0px 0px; width: 100%; text-size-adjust: 100%; font-family: Helvetica, Arial, serif;" width="100%" valign="top"></td></tr></tbody></table></div>
+</div>
+			</div>
+			<!--[if (gte mso 9)]></td></tr></table><![endif]-->
+			</div>
+	</td>
+ </tr>
+</tbody></table></div>
+</center>
+
+<div>&nbsp;</div><div align="center" id="aweber_container" style="background-color:#ffffff; width:100% !important"><div id="aweber_rem" style="box-sizing:border-box; color:#000000 !important; font-family:Helvetica,Arial,sans-serif !important; font-size:12px !important; line-height:16px; margin:0px; max-width:600px; padding:0px 8px; width:100%"><!--[if gte mso 9]><table width="600" style="color: #000000;font-family: Helvetica, Arial, sans-serif;font-size: 12px;line-height: 16px;"><tr><td style="padding:8px;"><![endif]--><div class="rem_align" style="text-align:center;"><span style="color:#000000 !important"><br><br>1244 S Evergreen Dr<br>
+Phoenixville PA 19460<br>
+USA</span><br><br><a href="https://www.aweber.com/z/r/?rBxsrCysrLTszCwsnIxMbLRGtCycrByMDAzs" rel="noopener noreferrer" style="color: #000000;" target="_blank"><span style="color:#000000 !important">Unsubscribe</span></a> &nbsp; | &nbsp; <a href="https://www.aweber.com/z/r/?rBxsrCysrLTszCwsnIxMbLRGtCycrByMDAzs" rel="noopener noreferrer" style="color: #000000;" target="_blank"><span style="color:#000000 !important">Change&nbsp;Subscriber&nbsp;Options</span></a><br><br></div><!--[if gte mso 9]></td></tr></table><![endif]--></div></div><img src="https://openrate.aweber.com/y/o/?l=CRfsK&m=gpvyo2ihc33m8rs" width="1" height="1"></body></html>}
